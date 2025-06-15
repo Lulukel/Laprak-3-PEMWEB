@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Praktikum - 03</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container py-5">
+        <h1 class="text-center mb-4">Laporan Praktikum - 03</h1>
+
+        <form id="praktikumForm">
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label for="inputName" class="form-label">Masukkan Nama:</label>
+                    <input type="text" id="inputName" class="form-control" placeholder="Masukkan Nama Kamu">
+                </div>
+                <div class="col-md-6">
+                    <label for="inputNIM" class="form-label">Masukkan NIM:</label>
+                    <input type="text" id="inputNIM" class="form-control" placeholder="Masukkan NIM Kamu">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <label for="inputAsal" class="form-label">Masukkan Asal Kamu:</label>
+                    <input type="text" id="inputAsal" class="form-control" placeholder="Masukkan data di sini">
+                </div>
+                <div class="col-md-4">
+                    <label for="selectDosen" class="form-label">Pilih Dosen Favorit:</label>
+                    <select id="selectDosen" class="form-select">
+                        <option selected disabled>Pilih salah satu</option>
+                        <option value="Pak Agus Mulyanto">Pak Agus Mulyanto</option>
+                        <option value="Bu Yuni Roza">Bu Yuni Roza</option>
+                        <option value="Bu Yessy Asri">Bu Yessy Asri</option>
+                    </select>
+                </div>
+                <div class="col-md-4">
+                    <label for="inputTanggalLahir" class="form-label">Pilih Tanggal Lahir anda:</label>
+                    <input type="date" id="inputTanggalLahir" class="form-control">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-bold">Tulis Hal favorit Kamu:</label>
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="inputTemanFavorit" class="form-label">Masukkan Nama Teman Favorit</label>
+                        <input type="text" id="inputTemanFavorit" class="form-control" placeholder="Budi">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="inputAiFavorit" class="form-label">Masukkan AI Favorit:</label>
+                        <input type="text" id="inputAiFavorit" class="form-control" placeholder="Meta AI">
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid mb-3">
+                <button type="submit" class="btn btn-primary">Kirim</button>
+            </div>
+        </form>
+
+        <!-- Tempat untuk menampilkan hasil -->
+        <div id="hasilOutput"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Ketika form disubmit
+        document.getElementById('praktikumForm').addEventListener('submit', function (e) {
+            e.preventDefault(); // mencegah form refresh halaman
+
+            // Mengambil semua nilai input
+            const nama = document.getElementById('inputName').value;
+            const nim = document.getElementById('inputNIM').value;
+            const asal = document.getElementById('inputAsal').value;
+            const dosen = document.getElementById('selectDosen').value;
+            const tglLahir = document.getElementById('inputTanggalLahir').value;
+            const teman = document.getElementById('inputTemanFavorit').value;
+            const ai = document.getElementById('inputAiFavorit').value;
+
+            // Membuat isi output
+            const hasilHTML = `
+                <div class="alert alert-info">Nama Kamu: ${nama}</div>
+                <div class="alert alert-info">NIM Kamu: ${nim}</div>
+                <div class="alert alert-info">Asal Kamu: ${asal}</div>
+                <div class="alert alert-info">Dosen Favorit: ${dosen}</div>
+                <div class="alert alert-info">Tanggal Lahir Kamu: ${tglLahir}</div>
+                <div class="alert alert-info">Teman Favorit: ${teman}</div>
+                <div class="alert alert-info">AI Favorit: ${ai}</div>
+                <div class="alert alert-info">Sukses: Semua data telah dikirim.</div>
+            `;
+
+            // Menampilkan hasil ke div hasilOutput
+            document.getElementById('hasilOutput').innerHTML = hasilHTML;
+        });
+    </script>
+</body>
+
+</html>

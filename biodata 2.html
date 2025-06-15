@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<!-- Mendeklarasikan bahwa dokumen ini menggunakan HTML5 -->
+
+<html lang="id">
+<!-- Tag pembuka HTML, dengan atribut lang="id" artinya bahasa dokumen ini adalah Bahasa Indonesia -->
+
+<head>
+    <!-- Bagian head berisi metadata dari halaman web -->
+    
+    <meta charset="UTF-8">
+    <!-- Menentukan encoding karakter yang digunakan adalah UTF-8, artinya halaman ini bisa menampilkan berbagai karakter internasional -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Agar halaman ini responsif, menyesuaikan dengan ukuran layar perangkat (handphone, tablet, komputer) -->
+
+    <title>Laporan Praktikum - 03</title>
+    <!-- Judul halaman yang akan tampil di tab browser -->
+
+    <!-- Bootstrap CSS CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Menghubungkan file CSS dari Bootstrap versi 5.3 melalui CDN (Content Delivery Network). Ini supaya kita bisa memakai semua fitur styling Bootstrap tanpa download manual -->
+</head>
+
+<body>
+    <!-- Bagian utama tampilan halaman dimulai dari sini -->
+
+    <div class="container py-5">
+        <!-- Container adalah komponen Bootstrap agar tampilan teratur di tengah dan memiliki padding kanan-kiri -->
+        <!-- py-5 artinya padding atas dan bawah sebesar 5 (skala Bootstrap) -->
+
+        <h1 class="text-center mb-4">Laporan Praktikum - 03</h1>
+        <!-- Judul utama halaman, text-center membuat teks rata tengah, mb-4 memberi margin bawah agar ada jarak -->
+
+        <form>
+            <!-- Form utama yang berisi input-input data pengguna -->
+
+            <div class="row mb-3">
+                <!-- Membuat baris grid Bootstrap, dengan margin bawah (mb-3) agar ada jarak antar baris -->
+
+                <div class="col-md-6">
+                    <!-- Kolom lebar 6 dari 12 kolom (setengah lebar layar) saat tampilan medium (md) ke atas -->
+                    <label for="inputName" class="form-label">Masukkan Nama:</label>
+                    <!-- Label untuk input nama -->
+                    <input type="text" id="inputName" class="form-control" placeholder="Masukkan Nama Kamu">
+                    <!-- Input teks biasa dengan class form-control agar mengikuti style Bootstrap -->
+                </div>
+
+                <div class="col-md-6">
+                    <!-- Kolom kedua untuk NIM -->
+                    <label for="inputNIM" class="form-label">Masukkan NIM:</label>
+                    <input type="text" id="inputNIM" class="form-control" placeholder="Masukkan NIM Kamu">
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <!-- Baris baru untuk 3 kolom selanjutnya -->
+
+                <div class="col-md-4">
+                    <!-- Kolom 1: input Asal -->
+                    <label for="inputAsal" class="form-label">Masukkan Asal Kamu:</label>
+                    <input type="text" id="inputAsal" class="form-control" placeholder="Masukkan data di sini">
+                </div>
+
+                <div class="col-md-4">
+                    <!-- Kolom 2: Select untuk memilih dosen favorit -->
+                    <label for="selectDosen" class="form-label">Pilih Dosen Favorit:</label>
+                    <select id="selectDosen" class="form-select">
+                        <!-- Select dropdown Bootstrap -->
+                        <option selected disabled>Pilih salah satu</option>
+                        <!-- Default option, tidak bisa dipilih -->
+                        <option value="Pak Agus Mulyanto">Pak Agus Mulyanto</option>
+                        <option value="Bu Yuni Roza">Bu Yuni Roza</option>
+                        <option value="Bu Yessy Asri">Bu Yessy Asri</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <!-- Kolom 3: input tanggal lahir -->
+                    <label for="inputTanggalLahir" class="form-label">Pilih Tanggal Lahir anda:</label>
+                    <input type="date" id="inputTanggalLahir" class="form-control">
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <!-- Form group untuk data favorit -->
+
+                <label class="form-label fw-bold">Tulis Hal favorit Kamu:</label>
+                <!-- Label bagian atas -->
+
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <!-- Input nama teman favorit -->
+                        <label for="inputTemanFavorit" class="form-label">Masukkan Nama Teman Favorit</label>
+                        <input type="text" id="inputTemanFavorit" class="form-control" placeholder="Budi">
+                    </div>
+
+                    <div class="col-md-6">
+                        <!-- Input AI favorit -->
+                        <label for="inputAiFavorit" class="form-label">Masukkan AI Favorit:</label>
+                        <input type="text" id="inputAiFavorit" class="form-control" placeholder="Meta AI">
+                    </div>
+                </div>
+            </div>
+
+            <div class="d-grid">
+                <!-- d-grid membuat tombol memenuhi lebar penuh -->
+                <button type="submit" class="btn btn-primary">Kirim</button>
+                <!-- Tombol submit, berwarna biru khas Bootstrap -->
+            </div>
+        </form>
+    </div>
+
+    <!-- Bootstrap JS CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Memasukkan file JS dari Bootstrap agar komponen yang butuh JavaScript bisa berjalan (seperti dropdown, modal, dsb) -->
+</body>
+
+</html>
+
